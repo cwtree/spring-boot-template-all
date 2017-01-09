@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cmcc.ms.dao.AdminUserMapper">
+
+	<resultMap id="RM-ADMINUSERLIST" type="com.cmcc.ms.dataobject.AdminUser">
+		<result property="id" column="ID" />
+		<result property="staffId" column="staff_id" />
+		<result property="username" column="username" />
+		<result property="msisdn" column="msisdn" />
+		<result property="email" column="email" />
+		<result property="adminPwd" column="admin_pwd" />
+		<result property="salt" column="salt" />
+		<result property="department" column="department" />
+		<result property="position" column="position" />
+		<result property="userRole" column="user_role" />
+		<result property="createId" column="create_id" />
+		<result property="updateId" column="update_id" />
+		<result property="createTime" column="create_time" />
+		<result property="updateTime" column="update_time" />
+		<result property="isDeleted" column="is_deleted" />
+	</resultMap>
+
+	<insert id="save" parameterType="com.cmcc.ms.dataobject.AdminUser"
+		useGeneratedKeys="true" keyProperty="id">
+	 <![CDATA[
+		insert into
+		admin_user(staff_id,username,msisdn,email,admin_pwd,salt,department,position,
+		user_role,create_id,update_id,create_time,update_time,is_deleted) 
+		values(#{staffId},#{username},#{msisdn},#{email},#{adminPwd},#{salt},#{department},
+		#{position},#{userRole},#{createId},#{updateId},#{createTime},#{updateTime},#{isDeleted})
+	]]>
+		<selectKey resultType="long" keyProperty="id" order="AFTER">
+			SELECT
+			@@IDENTITY
+		</selectKey>
+	</insert>
+
+	<insert id="saveBatch" parameterType="java.util.List"
+		useGeneratedKeys="true" keyProperty="id">
+		<selectKey resultType="long" keyProperty="id" order="AFTER">
+			SELECT
+			@@IDENTITY
+		</selectKey>  
+	 <![CDATA[
+		insert into
+		admin_user(staff_id,username,msisdn,email,admin_pwd,salt,department,position,
+		user_role,create_id,update_id,create_time,update_time,is_deleted)  
+		values  
+	]]>
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.staffId},#{item.username},#{item.msisdn},#{item.email},#{item.adminPwd},#{item.salt},
+			#{item.department},#{item.position},#{item.userRole},#{item.createId},#{item.updateId},
+			#{item.createTime},#{item.updateTime},#{item.isDeleted})
+		</foreach>
+	</insert>
+
+	<delete id="delete" parameterType="java.lang.Long">
+	 <![CDATA[
+		delete from
+		admin_user where id=#{id}  
+		]]>
+	</delete>
+
+	<update id="deleteLogic" parameterType="java.util.HashMap">
+		 <![CDATA[
+		update 
+		admin_user 
+		set 
+		IS_DELETED=#{isDeleted},UPDATE_TIME=#{updateTime},update_id=#{updateId} 
+		where id=#{id}
+		]]>
+		<if test="userRole != null">
+			and user_role=#{userRole}
+		</if>
+	</update>
+
+	<update id="update" parameterType="com.cmcc.ms.dataobject.AdminUser">
+	 <![CDATA[	
+		update
+		admin_user
+		set
+		UPDATE_TIME=#{updateTime},update_id=#{updateId},
+		msisdn=#{msisdn},email=#{email},admin_pwd=#{adminPwd},
+		department=#{department},position=#{position},salt=#{salt}       
+		where id=#{id}
+		]]>
+	</update>
+
+	<select id="find" parameterType="java.util.HashMap" resultMap="RM-ADMINUSERLIST">
+		 <![CDATA[
+		select
+		ID,staff_id,username,msisdn,email,admin_pwd,salt,department,position,user_role,
+		create_id,update_id,create_time,update_time,is_deleted
+		from admin_user
+		where 1=1 
+		]]>
+		<if test="id != null">
+			and id=#{id}
+		</if>
+		<if test="ids!=null">
+			and id in
+			<foreach collection="ids" item="item" index="index" open="("
+				separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="staffId != null and staffId != ''">
+			and staff_id=#{staffId}
+		</if>
+		<if test="createId != null">
+			and create_id=#{createId}
+		</if>
+		<if test="username != null and username != ''">
+			and username=#{username}
+		</if>
+		<if test="usernameLike != null and usernameLike != ''">
+			and username like concat('%',#{usernameLike},'%')
+		</if>
+		<if test="msisdn != null and msisdn != ''">
+			and msisdn=#{msisdn}
+		</if>
+		<if test="msisdnLike != null and msisdnLike != ''">
+			and msisdn like concat('%',#{msisdnLike},'%')
+		</if>
+		<if test="email != null and email != ''">
+			and email=#{email}
+		</if>
+		<if test="userRole != null">
+			and user_role=#{userRole}
+		</if>
+		<if test="department != null and department!=''">
+			and department=#{department}
+		</if>
+		<if test="departmentLike != null and departmentLike != ''">
+			and department like concat('%',#{departmentLike},'%')
+		</if>
+		<if test="isDeleted != null">
+			and is_deleted=#{isDeleted}
+		</if>
+		<if test="order != null and order=='updateTime'">
+			ORDER BY UPDATE_TIME DESC
+		</if>
+		<if test="order != null and order=='username'">
+			ORDER BY USERNAME DESC
+		</if>
+		<if test="order != null and order=='department'">
+			ORDER BY DEPARTMENT DESC
+		</if>
+		<if test="limitStartIndex!=null and limitPageSize!=null">
+			limit
+			#{limitStartIndex},#{limitPageSize}
+		</if>
+	</select>
+
+	<select id="findCount" parameterType="java.util.HashMap"
+		resultType="java.lang.Integer">
+		 <![CDATA[
+		select count(1) 
+		from admin_user
+		where 1=1 
+		]]>
+		<if test="id != null">
+			and id=#{id}
+		</if>
+		<if test="ids!=null">
+			and id in
+			<foreach collection="ids" item="item" index="index" open="("
+				separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="staffId != null and staffId != ''">
+			and staff_id=#{staffId}
+		</if>
+		<if test="username != null and username != ''">
+			and username=#{username}
+		</if>
+		<if test="usernameLike != null and usernameLike != ''">
+			and username like concat('%',#{usernameLike},'%')
+		</if>
+		<if test="msisdn != null and msisdn != ''">
+			and msisdn=#{msisdn}
+		</if>
+		<if test="msisdnLike != null and msisdnLike != ''">
+			and msisdn like concat('%',#{msisdnLike},'%')
+		</if>
+		<if test="email != null and email != ''">
+			and email=#{email}
+		</if>
+		<if test="userRole != null">
+			and user_role=#{userRole}
+		</if>
+		<if test="department != null and department!=''">
+			and department=#{department}
+		</if>
+		<if test="departmentLike != null and departmentLike != ''">
+			and department like concat('%',#{departmentLike},'%')
+		</if>
+		<if test="createId != null">
+			and create_id=#{createId}
+		</if>
+		<if test="isDeleted != null">
+			and is_deleted=#{isDeleted}
+		</if>
+	</select>
+
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
