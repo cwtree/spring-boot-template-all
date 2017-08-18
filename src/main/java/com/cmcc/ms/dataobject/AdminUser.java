@@ -166,4 +166,26 @@ public class AdminUser implements Serializable {
 		this.isDeleted = isDeleted;
 	}
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(this.getClass().getSimpleName()).append("[");
+        sb.append("id : ").append(id).append(", ");
+        sb.append("staffId : ").append(staffId).append(", ");
+        sb.append("username : ").append(username).append(", ");
+        sb.append("msisdn : ").append(msisdn).append(", ");
+        sb.append("email : ").append(email).append(", ");
+        sb.append("adminPwd : ").append(adminPwd).append(", ");
+        sb.append("salt : ").append(salt).append(", ");
+        sb.append("department : ").append(department).append(", ");
+        sb.append("position : ").append(position).append(", ");
+        sb.append("userRole : ").append(userRole).append(", ");
+        sb.append("createId : ").append(createId).append(", ");
+        sb.append("updateId : ").append(updateId).append(", ");
+        sb.append("createTime : ").append(createTime).append(", ");
+        sb.append("department : ").append(department).append(", ");
+        sb.append("updateTime : ").append(updateTime).append(", ");
+        sb.append("isDeleted : ").append(isDeleted);
+        sb.append("]");
+        return sb.toString();
+    }
 }
