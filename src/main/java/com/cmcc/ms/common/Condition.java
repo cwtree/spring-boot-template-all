@@ -1,9 +1,6 @@
 /**  
  * Project Name:admin.data  
  * File Name:DaoCommonCondition.java  
- * Package Name:com.cmcc.admin.data.common  
- * Date:2016年11月9日下午4:27:51  
- * Copyright (c) 2016, chiwei@chinamobile.com All Rights Reserved.  
  *  
  */
 
