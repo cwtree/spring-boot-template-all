@@ -1,10 +1,6 @@
 /**  
  * Project Name:spring-boot  
  * File Name:ApplicationTest.java  
- * Package Name:com.cmc.ms.test  
- * Date:2016年12月9日上午10:18:10  
- * Copyright (c) 2016, chiwei@chinamobile.com All Rights Reserved.  
- *  
  */
 
 package com.cmc.ms.dao.test;
