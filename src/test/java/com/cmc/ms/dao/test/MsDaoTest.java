@@ -1,10 +1,6 @@
 /**  
  * Project Name:spring-boot  
  * File Name:MsDaoTest.java  
- * Package Name:com.cmc.ms.dao.test  
- * Date:2017年7月3日下午5:29:26  
- * Copyright (c) 2017, chiwei@chinamobile.com All Rights Reserved.  
- *  
  */
 
 package com.cmc.ms.dao.test;
