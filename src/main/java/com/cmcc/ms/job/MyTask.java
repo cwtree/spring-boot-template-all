@@ -1,10 +1,6 @@
 /**  
  * Project Name:spring-boot  
  * File Name:MyTask.java  
- * Package Name:com.cmcc.ms.job  
- * Date:2016年12月27日下午3:05:30  
- * Copyright (c) 2016, chiwei@chinamobile.com All Rights Reserved.  
- *  
  */
 
 package com.cmcc.ms.job;
