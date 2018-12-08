@@ -1,10 +1,6 @@
 /**  
  * Project Name:spring-boot  
  * File Name:MyInterceptor.java  
- * Package Name:com.cmcc.ms.interceptor  
- * Date:2016年12月27日下午5:20:36  
- * Copyright (c) 2016, chiwei@chinamobile.com All Rights Reserved.  
- *  
  */
 
 package com.cmcc.ms.interceptor;
