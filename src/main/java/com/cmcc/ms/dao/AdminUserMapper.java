@@ -1,10 +1,6 @@
 /**  
  * Project Name:admin.data  
  * File Name:AdminUserDao.java  
- * Package Name:com.cmcc.admin.data.dao  
- * Date:2016年11月10日下午5:12:49  
- * Copyright (c) 2016, chiwei@chinamobile.com All Rights Reserved.  
- *  
  */
 
 package com.cmcc.ms.dao;
