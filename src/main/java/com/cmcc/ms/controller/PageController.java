@@ -1,10 +1,6 @@
 /**  
  * Project Name:spring-boot  
  * File Name:PageController.java  
- * Package Name:com.cmcc.ms.controller  
- * Date:2016年12月9日上午11:20:26  
- * Copyright (c) 2016, chiwei@chinamobile.com All Rights Reserved.  
- *  
  */
 
 package com.cmcc.ms.controller;
