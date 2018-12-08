@@ -1,10 +1,6 @@
 /**  
  * Project Name:admin.data  
  * File Name:AdminUser.java  
- * Package Name:com.cmcc.admin.data.dataobject  
- * Date:2016年11月10日下午5:11:22  
- * Copyright (c) 2016, chiwei@chinamobile.com All Rights Reserved.  
- *  
  */
 
 package com.cmcc.ms.dataobject;
