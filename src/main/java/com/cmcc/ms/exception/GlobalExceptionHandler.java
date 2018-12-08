@@ -1,10 +1,6 @@
 /**  
  * Project Name:spring-boot  
  * File Name:GlobalExceptionHandler.java  
- * Package Name:com.cmcc.ms.exception  
- * Date:2016年12月9日上午11:04:38  
- * Copyright (c) 2016, chiwei@chinamobile.com All Rights Reserved.  
- *  
  */
 
 package com.cmcc.ms.exception;
