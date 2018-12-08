@@ -1,9 +1,6 @@
 /**  
  * Project Name:spring-boot  
  * File Name:SysProp.java  
- * Package Name:com.cmcc.ms  
- * Date:2016年12月9日上午9:35:14  
- * Copyright (c) 2016, chiwei@chinamobile.com All Rights Reserved.  
  *  
  */
 
