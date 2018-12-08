@@ -1,10 +1,6 @@
 /**  
  * Project Name:spring-boot  
  * File Name:MsDao.java  
- * Package Name:com.cmcc.ms.dao  
- * Date:2016年12月8日下午5:22:00  
- * Copyright (c) 2016, chiwei@chinamobile.com All Rights Reserved.  
- *  
 */  
   
 package com.cmcc.ms.dao;  
