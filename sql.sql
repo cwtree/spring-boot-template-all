@@ -1,5 +1,5 @@
-DROP TABLE admin_user;
-CREATE TABLE admin_user(
+DROP TABLE IF EXISTS staff_user;
+CREATE TABLE staff_user(
    	ID           int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
    	staff_id     varchar(20) DEFAULT NULL COMMENT '员工工号',
    	username     varchar(10) DEFAULT NULL COMMENT '用户姓名',

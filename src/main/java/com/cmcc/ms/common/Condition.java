@@ -1,13 +1,7 @@
-/**  
- * Project Name:admin.data  
- * File Name:DaoCommonCondition.java  
- *  
- */
-
 package com.cmcc.ms.common;
 
 /**
- * ClassName:DaoCommonCondition <br/>
+ * ClassName:Condition <br/>
  * Function: TODO ADD FUNCTION. <br/>
  * Reason: TODO ADD REASON. <br/>
  * Date: 2016年11月9日 下午4:27:51 <br/>
@@ -20,8 +14,8 @@ package com.cmcc.ms.common;
 public interface Condition {
 
 	String ID = "id";
-	String CREATE_ID = "createId";
-	String UPDATE_ID = "updateId";
+	String CREATOR = "creator";
+	String UPDATOR = "updator";
 	String CREATE_TIME = "createTime";
 	String UPDATE_TIME = "updateTime";
 	String IS_DELETED = "isDeleted";

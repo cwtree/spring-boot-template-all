@@ -1,8 +1,3 @@
-/**  
- * Project Name:spring-boot  
- * File Name:MyInterceptor.java  
- */
-
 package com.cmcc.ms.interceptor;
 
 import javax.servlet.http.HttpServletRequest;

@@ -1,8 +1,3 @@
-/**  
- * Project Name:admin.data  
- * File Name:AdminUserDao.java  
- */
-
 package com.cmcc.ms.dao;
 
 import java.util.List;
@@ -10,10 +5,10 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.cmcc.ms.dataobject.AdminUser;
+import com.cmcc.ms.dataobject.StaffUser;
 
 /**
- * ClassName:AdminUserDao <br/>
+ * ClassName:StaffUserMapper <br/>
  * Function: TODO ADD FUNCTION. <br/>
  * Reason: TODO ADD REASON. <br/>
  * Date: 2016年11月10日 下午5:12:49 <br/>
@@ -24,7 +19,7 @@ import com.cmcc.ms.dataobject.AdminUser;
  * @see
  */
 @Mapper
-public interface AdminUserMapper {
+public interface StaffUserMapper {
 
 	String ID = "id";
 	String STAFF_ID = "staffId";
@@ -48,7 +43,7 @@ public interface AdminUserMapper {
 	 * @return
 	 * @since JDK 1.6
 	 */
-	public int save(AdminUser au);
+	public int save(StaffUser au);
 
 	/**
 	 * 
@@ -60,7 +55,7 @@ public interface AdminUserMapper {
 	 * @return
 	 * @since JDK 1.6
 	 */
-	public int saveBatch(List<AdminUser> userList);
+	public int saveBatch(List<StaffUser> userList);
 
 	/**
 	 * 
@@ -96,7 +91,7 @@ public interface AdminUserMapper {
 	 * @return
 	 * @since JDK 1.6
 	 */
-	public int update(AdminUser au);
+	public int update(StaffUser au);
 
 	/**
 	 * 
@@ -108,7 +103,7 @@ public interface AdminUserMapper {
 	 * @return
 	 * @since JDK 1.6
 	 */
-	public List<AdminUser> find(Map<String, Object> paramMap);
+	public List<StaffUser> find(Map<String, Object> paramMap);
 
 	/**
 	 * 

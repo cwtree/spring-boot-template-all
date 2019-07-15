@@ -8,8 +8,15 @@
 	</formats>
 	<fileSets>
 		<fileSet>
-			<directory>bin</directory>
+			<directory>${project.build.directory}</directory>
 			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>springboot_ditty.jar</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>bin</directory>
+			<outputDirectory>/bin</outputDirectory>
 		</fileSet>
 		<fileSet>
 			<directory>src/main/resources</directory>
@@ -20,11 +27,12 @@
 			<outputDirectory>/config</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>${project.build.directory}</directory>
-			<outputDirectory>/</outputDirectory>
-			<includes>
-				<include>erebus.jar</include>
-			</includes>
+			<directory>src/main/resources/static</directory>
+			<outputDirectory>/static</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/resources/templates</directory>
+			<outputDirectory>/templates</outputDirectory>
 		</fileSet>
 	</fileSets>
 	<dependencySets>

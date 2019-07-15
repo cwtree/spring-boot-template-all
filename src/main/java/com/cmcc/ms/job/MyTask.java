@@ -1,8 +1,3 @@
-/**  
- * Project Name:spring-boot  
- * File Name:MyTask.java  
- */
-
 package com.cmcc.ms.job;
 
 import org.springframework.scheduling.annotation.Scheduled;
@@ -27,8 +22,15 @@ public class MyTask {
 	// 定时任务示例
 	@Scheduled(fixedRate = 5000)
 	public void reportTime() {
-		System.out.println(DateUtil.d2s(DateUtil.getCurrentDate(),
-				DateUtil.YYYYMMDDHHMMSSSSSWITHSYMBOL));
+		System.out.println(DateUtil.d2s(DateUtil.getCurrentDate(), DateUtil.YYYYMMDDHHMMSSSSSWITHSYMBOL));
+	}
+
+	/**
+	 * 每隔5分钟执行一次
+	 */
+	@Scheduled(cron = "0 0/5 * * * ?")
+	public void crawleringDataHandle() {
+		System.out.println("===============");
 	}
 
 }

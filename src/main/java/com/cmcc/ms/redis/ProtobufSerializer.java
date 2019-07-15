@@ -1,9 +1,3 @@
-/*
- * Project: commons-cache
- * 
- * File Created at 2016年6月6日
- * 
- */
 package com.cmcc.ms.redis;
 
 import io.protostuff.LinkedBuffer;
