@@ -6,4 +6,6 @@ public interface Constants {
 
 	String REDIS_SERVER = SystemConfig.get("redis.server");
 	
+	boolean SWAGGER_API_SWITCH = Boolean.parseBoolean(SystemConfig.get("swagger.api.switch"));
+	
 }

@@ -1,8 +1,5 @@
 package com.cmcc.ms.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.cmcc.ms.manager.TestManager;
 
 /**
  * 按照系统的业务功能拆分
