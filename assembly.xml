@@ -19,8 +19,13 @@
 			<outputDirectory>/bin</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>src/main/resources</directory>
-			<outputDirectory>/resources</outputDirectory>
+			<directory>src/main/resources/</directory>
+			<includes>
+				<include>
+					banner.txt
+				</include>
+			</includes>
+			<outputDirectory>/</outputDirectory>
 		</fileSet>
 		<fileSet>
 			<directory>config</directory>
