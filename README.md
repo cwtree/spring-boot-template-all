@@ -1,4 +1,4 @@
-# spring-boot-template-all
+# springboot_ditty
 包括从dao到manager到service到controller的一个完整实例  
 包括完整的dao单元测试，manager单元测试，service单元测试  
 
